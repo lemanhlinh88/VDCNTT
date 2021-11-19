@@ -1,0 +1,115 @@
+:root {
+  --footer-back-color: rgb(38, 41, 53);
+  --footer-btn-color: rgb(29, 32, 41);
+  --title-color: rgb(231, 231, 231);
+  --content-color: rgb(175, 175, 175);
+  --theme-yellow: rgb(224, 165, 1);
+  --footer-btn-hover: rgb(55, 57, 65);
+  --rem-1: 1rem;
+  --rem-085: 0.85rem;
+  --rem-102: 1.2rem;
+  --px-24: 24px;
+  --px-48: 48px;
+  --px-36: 36px;
+  --px-16: 16px;
+  --px-8px: 8px;
+  --px-32: 32px; }
+
+#footer {
+  background-color: var(--footer-back-color);
+  padding: 56px 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
+#footer .title-text {
+  color: var(--title-color);
+  font-size: var(--rem-102);
+  text-align: center;
+  transition: 0.2s ease-in-out; }
+
+#footer span {
+  display: block; }
+
+#footer .content-text {
+  color: var(--content-color);
+  font-size: var(--rem-1);
+  text-align: center; }
+
+#footer .footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--px-32) var(--px-32);
+  align-self: center;
+  justify-content: center; }
+
+#footer .contact-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--px-16); }
+
+#footer i {
+  color: var(--content-color); }
+
+#footer .column-align {
+  display: flex;
+  flex-direction: column;
+  /* min-width: 250px;
+    max-width: 250px; */
+  width: 250px; }
+
+#footer .read-more-btn {
+  background-color: var(--footer-btn-color);
+  padding: 4px 8px;
+  color: var(--title-color);
+  font-size: var(--rem-1); }
+
+#footer .separate {
+  margin-top: var(--px-8px);
+  background-color: var(--theme-yellow);
+  width: 100%;
+  height: 1px; }
+
+#footer .content-text-wrapper,
+.contact-item {
+  margin-top: var(--px-8px); }
+
+#footer .btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: var(--px-8px); }
+
+#footer .image-wrapper {
+  margin-top: var(--px-8px);
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 8px;
+  grid-row-gap: 1px; }
+
+#footer img {
+  max-width: 100%;
+  max-height: 100%; }
+
+#footer .content-text:hover {
+  cursor: pointer;
+  color: var(--title-color); }
+
+#footer .read-more-btn:hover {
+  cursor: pointer;
+  background-color: var(--footer-btn-hover); }
+
+@media screen and (max-width: 480px) {
+  :root {
+    --rem-1: 0.85rem;
+    --rem-085: 0.65rem;
+    --rem-102: 1rem;
+    --px-8px: 2px; } }
+
+@media screen and (max-width: 1200px) {
+  :root {
+    --rem-1: 0.85rem;
+    --rem-085: 0.7rem;
+    --rem-102: 1rem;
+    --px-8px: 4px; } }

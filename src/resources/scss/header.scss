@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat';
+}
+body {
+    font-size: 14px;
+}
+.header_button {
+    display: none;
+}
+.header a {
+    text-decoration: none;
+    color: #fff;
+}
+.header {
+    height: 7em;
+    width: 100%;
+    margin-bottom: 2em;
+    position: sticky;
+    top: 0;
+    background-color: #212529;
+    z-index: 1;
+}
+.header_title {
+    width: 10em;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    line-height: 3em;
+    font-size: 2em;
+}
+.header_ul {
+    list-style: none;
+    display: inline-flex;
+    position: absolute;
+    right: 0;
+    gap: 2em;
+}
+.header_ul > li {
+    width: 6em;
+}
+.header_ul > li > a:hover {
+    background-color: black;
+    color: white;
+}
+.header_ul > li > a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    line-height: 6em;
+    font-weight: bold;
+}
+.list-item--button {
+    display: none;
+}
+.close_button {
+    display: none;
+}
+.backdrop {
+    display: none;
+}
+@media only screen and (max-width: 750px) {
+    .list-item--button {
+        display: block;
+    }
+    .header {
+        font-size: 10px;
+        height: 5em;
+        position: relative;
+    }
+    .header_button {
+        cursor: pointer;
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 4em;
+        height: 4em;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        gap: 0.25em;
+        justify-content: center;
+        align-items: center;
+    }
+    .header_button > div {
+        width: 1.5em;
+        height: 0.25em;
+        background-color: black;
+    }
+    .header_button:hover {
+        background-color: black;
+    }
+    .header_button:hover > div {
+        background-color: white;
+    }
+    .header_ul {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        background: #222222;
+        backdrop-filter: blur(15px);
+        width: 50%;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: -50%;
+        transition: all 0.5s linear;
+        z-index: 3;
+        display: none;
+    }
+    .header_ul.show_ul {
+        display: flex;
+        animation: showNavbar 0.5s linear;
+        left: 0;
+    }
+    .header_ul.hide_ul {
+        display: flex;
+        animation: hideNavbar 0.5s linear;
+    }
+    .span {
+        content: '';
+        position: absolute;
+        height: 100vh;
+        width: 50vw;
+        top: 0;
+        left: 100%;
+    }
+    .header_ul > li {
+        width: 100%;
+    }
+    .header_ul > li > a {
+        color: white;
+        font-size: 1.5em;
+        text-align: left;
+        padding-left: 0.5em;
+    }
+    .close_button {
+        cursor: pointer;
+        display: inline-block;
+        position: absolute;
+        top: 0;
+        right: 1px;
+        width: 5em;
+        height: 5em;
+        color: #fff;
+    }
+    .close_button:hover {
+        background-color: black;
+    }
+    .close_button:after {
+        content: '\00d7'; /* This will render the 'X' */
+        font-size: 5em;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .back_drop {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-color: rgba(204, 204, 204, 0.3);
+        display: none;
+    }
+    .back_drop.show {
+        display: block;
+    }
+    .back_drop.hide {
+        display: none;
+    }
+    @keyframes showNavbar {
+        0% {
+            left: -50%;
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+            left: 0;
+        }
+    }
+    @keyframes hideNavbar {
+        0% {
+            opacity: 1;
+            left: 0;
+        }
+        100% {
+            opacity: 0;
+            left: -50%;
+        }
+    }
+}
